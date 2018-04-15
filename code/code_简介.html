@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+    <head>
+		<meta charset="UTF-8">
+        <title>HTML5</title>
+        <link rel="stylesheet" href="styles.css" />
+		<script src="../angular.min.js"></script>
+    </head>
+    <body>
+	<!-- 	<h1>Angular指令：ng-init指令初始化变量</h1>
+		<div id="" class="" ng-app="" ng-init="firstname='温建平'">
+			<p>姓名为
+				<span class="" ng-bind="firstname"></span>
+			</p>
+		</div> -->
+		<br />
+		<h1>Angular应用</h1>
+		<div ng-app="myApp" ng-controller="myCtrl">
+ 
+			名: <input type="text" ng-model="firstName"><br>
+			姓: <input type="text" ng-model="lastName"><br>
+			<br>
+			姓名: {{firstName + " " + lastName}}
+		 
+		</div>
+		<script>
+			var app = angular.module('myApp', []);
+			app.controller('myCtrl', function($scope) {
+				$scope.firstName= "John";
+				$scope.lastName= "Doe";
+			});
+		</script>
+    </body>
+	
+</html>
