@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+    <head>
+		<meta charset="UTF-8">
+        <title>HTML5</title>
+        <link rel="stylesheet" href="styles.css" />
+		<script src="../angular.min.js"></script>
+    </head>
+    <body ng-app="myApp">
+	<!-- 	<h2>重复HTML元素</h2> -->
+		<!-- <div id="" class="" ng-app="" ng-init="names=['Jani','Hei']">
+			<p>使用ng-repeat来循环数组</p>
+			<ul>
+				<li ng-repeat="x in names">
+					{{x}}
+				</li>
+			</ul>
+		</div> -->
+		<!-- <div id="" class="" ng-app="" ng-init="names=[
+			{name:'w',sex:'男'},
+			{name:'z',sex:'女'},
+			{name:'c',sex:'令狐冲'}
+		]">
+			<p>使用ng-repeat来循环数组</p>
+			<ul>
+				<li ng-repeat="x in names">
+					{{x.name+" : "+x.sex}}
+				</li>
+			</ul>
+		</div> -->
+		<!-- directive:aa-b -->
+
+		<script>
+		var app = angular.module("myApp", []);
+		app.directive("aaB", function() {
+			return {
+				restrict:"M",
+				replace:true,
+				template : "<h1>自定义指令!</h1>"
+			};
+		});
+		</script>
+    </body>
+</html>
