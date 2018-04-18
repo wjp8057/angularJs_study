@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+    <head>
+		<meta charset="UTF-8">
+        <title>HTML5</title>
+        <script src="../angular.min.js"></script>
+    </head>
+    <body ng-app='myApp'>
+		<div id="" class="" ng-controller='c1'>
+			{{urlmg}}
+		</div>
+		<div id="" class="" ng-controller='c2'>
+			{{msg}}
+		</div>
+		<div id="" class="" ng-controller='c3'>
+			{{msg}}
+		</div>
+		<div id="" class="" ng-controller='myCtrl'>
+			{{hex}}
+		</div>
+		<script type="text/javascript">
+			var app=angular.module('myApp',[]);
+			app.controller('c1',function($scope,$location){
+				$scope.urlmg=$location.absUrl();
+			});
+			app.controller('c2',function($scope,$timeout){
+				$scope.msg="温建平";
+				$timeout(function(){
+					$scope.msg='温建平。。'
+				},9000);
+			});
+			app.controller('c3',function($scope,$interval){
+				$scope.msg=new Date().toLocaleTimeString();
+				$interval(function(){
+					$scope.msg=new Date().toLocaleTimeString();
+				},1000);
+			});
+
+			app.service('a', function() {
+				this.myFunc = function (x) {
+					return x.length;
+				}
+			});
+			app.controller('myCtrl', function($scope, a) {
+				$scope.hex = a.myFunc('2fsdfa55');
+			});
+		</script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+    <head>
+		<meta charset="UTF-8">
+        <title>HTML5</title>
+        <script src="../angular.min.js"></script>
+    </head>
+    <body>
+		<div ng-app="myApp" ng-controller="siteCtrl"> 
+​
+		<ul>
+		  <li ng-repeat="x in names">
+			{{ x.Name + ', ' + x.Country }}
+		  </li>
+		</ul>
+		​
+		</div>
+​
+		<script>
+			var app = angular.module('myApp', []);
+			
+			app.controller('siteCtrl', function($scope, $http) {
+				$http({
+					method: 'GET',
+					url: 'http://118.24.109.243:8080/test.php'
+				}).then(function successCallback(response) {
+						$scope.names = response.data.sites;
+					}, function errorCallback(response) {
+						// 请求失败执行代码
+				});
+			  
+			});
+	</script>
+    </body>
+	
+</html>

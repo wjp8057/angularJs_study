@@ -138,5 +138,79 @@
 				    <input name="myAddress" ng-model="text" required>
 				</form>
 		<font color=red>如果没有通过验证，那这个input的背景颜色为上面定义的</font>
+* [AngularJS 作用域](http://www.runoob.com/angularjs/angularjs-scopes.html)
+	+ 是应用在html（视图）和 JavaScript (控制器)之间的纽带<br/>
+	+ 是一个对象，可以有方法和属性
+	+ 可应用在视图和控制器上。
+	+ $rootScope 是根作用域
 
-		
+* [AngularJS 控制器](http://www.runoob.com/angularjs/angularjs-controllers.html)
+
+	+  AngularJS 控制器 控制 AngularJS 应用程序的数据。<br/>
+	+ AngularJS 控制器是常规的 JavaScript 对象。<br/>
+	+ ng-controller 指令定义了应用程序控制器。<br/>
+
+* [AngularJS 过滤器](http://www.runoob.com/angularjs/angularjs-filters.html)
+
+	<font color=red>格式：| 过滤器</font>
+	
+	- currency	格式化数字为货币格式。
+	- filter	从数组项中选择一个子集。
+	- lowercase	格式化字符串为小写。
+	- orderBy	根据某个表达式排列数组。
+	- uppercase	格式化字符串为大写。
+	- 自定义过滤器语法
+	
+			app.filter('reverse', function() { //可以注入依赖
+			    return function(text) {
+			        return text.split("").reverse().join("");
+			    }
+			});
+* [AngularJS 服务](http://www.runoob.com/angularjs/angularjs-services.html)
+
+	+ $timeout服务：延迟执行服务$timeout(function(){});
+	+ $interval服务：间隔执行服务
+	+ 。。。。。  
+  
+* [AngularJS Http](http://www.runoob.com/angularjs/angularjs-http.html)  
+	+ $http用于读取远程的服务器的数据
+	+ 简写方法（get和post）  
+	 *  `$http.get('/someUrl', config).then(successCallback, errorCallback);`
+	 *  `$http.post('/someUrl', data, config).then(successCallback, errorCallback);`
+	 * [解决跨越请求的问题]((http://www.runoob.com/w3cnote/php-ajax-cross-border.html)
+	 * 设置响应的类型和字符：header("Content-type: application/json; charset=gbk");
+	  
+* [AngularJS Select(选择框)](http://www.runoob.com/angularjs/angularjs-select.html)
+	* 可以通过数组或对象创建一个下拉列表选项
+	* 用ng-options指令来创建一个下拉列表
+	* [设置初始值的两种方式见菜鸟教程](http://www.runoob.com/angularjs/angularjs-select.html)  
+	
+* [AngularJS 表格](http://www.runoob.com/angularjs/angularjs-tables.html)
+	 + 用ng-repeat显示表格
+	 `<table>
+		  <tr ng-repeat="x in names">
+		    <td>{{ x.Name }}</td>
+		    <td>{{ x.Country }}</td>
+		  </tr>
+	  </table>`
+* [AngularJS SQL](http://www.runoob.com/angularjs/angularjs-sql.html)
+	+ 这里要注意，$http请求返回的数据格式是对象类型
+	+ 对象类型数据和json类型数据格式区分
+	  
+* [AngularJS HTML DOM](http://www.runoob.com/angularjs/angularjs-html-dom.html)
+	+ ng-disabled 让html元素不可用
+	+ ng-show 控制html元素的显示与隐藏  
+	
+* [AngularJS 模块](http://www.runoob.com/angularjs/angularjs-modules.html)
+	
+	+ 模块定义了一个应用程序。
+
+	+ 模块是应用程序中不同部分的容器。
+
+	+ 模块是应用控制器的容器。
+
+    + 控制器通常属于一个模块。  
+    * 创建模块通过angular.module函数来创建
+    * 添加自己的指令，directive
+    * <font color=red size=3>	在模块定义中 [] 参数用于定义模块的依赖关系。
+中括号[]表示该模块没有依赖，如果有依赖的话会在中括号写上依赖的模块名字。</font>

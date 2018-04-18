@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+    <head>
+		<meta charset="UTF-8">
+        <title>HTML5</title>
+        <script src="../angular.min.js"></script>
+    </head>
+    <body>
+		<!-- <div ng-app='myApp' ng-controller='c1'>
+			<select ng-model='selectedName' ng-init="selectedName=names[0]" ng-options="x for x in names"></select>
+		</div> -->
+		<!-- <div ng-app='myApp' ng-controller='c1'>
+			<select ng-model="selectedName"><option ng-repeat="x in names" value="{{x.url}}">{{x.site}}</option></select>
+			<h1>{{selectedName}}<br/>
+				
+			</h1>
+		</div>
+		<div ng-app='myApp' ng-controller='c1'>
+			<select ng-model="selectedName" ng-options="x.site for x in names"></select>
+			<h1>{{selectedName}}<br/>
+				
+			</h1>
+		</div> 
+		
+		<hr/> -->
+		<div ng-app='myApp' ng-controller='c2'>
+			<select ng-model="selectedName2" ng-options="x for (x,y) in si"></select>
+			<h1>{{selectedName2}}<br/>
+				
+			</h1>
+		</div> 
+		<script type="text/javascript">
+		<!--
+			var app=angular.module('myApp',[]);
+			app.controller('c1',function($scope){
+				$scope.names=[ {site : "Google", url : "http://www.google.com"},
+						{site : "Runoob", url : "http://www.runoob.com"},
+						{site : "Taobao", url : "http://www.taobao.com"}
+					]
+			});
+			app.controller('c2',function($scope){
+				$scope.si= {site : "Google", url : "http://www.google.com",site1 : "Google", url1 : "http://www.google.com",site2 : "Google", url2 : "http://www.google.com"};
+			});
+		//-->
+		</script>
+    </body>
+</html>

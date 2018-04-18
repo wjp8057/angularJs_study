@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+    <head>
+		<meta charset="UTF-8">
+        <title>HTML5</title>
+         <link rel="stylesheet" href="styles.css" />
+		<script src="../angular.min.js"></script>
+    </head>
+    <body>
+		<!-- <div id="" class="" ng-app="myApp" ng-controller='myc'>
+			<button ng-click="count=count+1">点我！</button>
+			<p>{{count}}</p>
+		</div> -->
+		<!-- <div id="" class="" ng-app="myApp" ng-controller='myc2'>
+			<p><button ng-click="toggle()">开关</button></p>
+			<p ng-hide='f'>
+				姓<input type="text" ng-model='a'/><br/>
+				名<input type="text" ng-model='b'/><br/>
+			</p>
+			
+			<p>{{f}}</p>
+		</div> -->
+		 <div id="" class="" ng-app="myApp" ng-controller='event'>
+			<p><button ng-click="toggle()">{{text}}</button></p>
+			<p ng-hide='flag'>
+				ffff
+			</p>
+			
+			<p>{{flag}}</p>
+		</div> 
+		<script type="text/javascript">
+		<!--
+			var app=angular.module('myApp',[]);
+			app.controller('myc',function($scope){
+				$scope.count=0;
+			});
+			app.controller('myc2',function($scope){
+				$scope.a='abc';
+				$scope.b='aaa';
+				$scope.f=false;
+				$scope.toggle=function(){
+					$scope.f=!$scope.f;
+				}
+			});
+			app.controller('event',['$scope',function($scope){
+				$scope.flag=false;
+				$scope.text='点击可见';
+				$scope.toggle=function(){
+					$scope.flag=$scope.flag?false:true;
+					$scope.text=$scope.flag?'点击消失':'点击可见';
+				}
+			}]);
+		//-->
+		</script>
+    </body>
+</html>

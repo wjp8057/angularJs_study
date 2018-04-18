@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+    <head>
+		<meta charset="UTF-8">
+        <title>HTML5</title>
+        <link rel="stylesheet" href="styles.css" />
+		<script src="../angular.min.js"></script>
+    </head>
+    <body ng-app="myApp" ng-controller="myCtrl">
+		<!-- <h5>{{name}}</h5>
+		<script>
+			var app=angular.module("myApp",[]);
+			app.controller("myCtrl",function($scope){
+				$scope.name="温建平";
+			});
+		</script> -->
+		<!-- <p>
+			<input type="text" ng-model="name" /><br/>
+			{{greet}}
+			<input type='button' value="点击" ng-click="sayh()"/>
+		</p>
+		<script>
+			var app=angular.module("myApp",[]);
+			app.controller("myCtrl",function($scope){
+				$scope.name="温建平";
+				$scope.sayh=function(){
+					$scope.greet="hello"+$scope.name;
+				};
+			});
+		</script> -->
+		<p>
+			<li ng-repeat="x in name">{{x}}{{lastname}}</li>
+		</p>
+		<script>
+			var app=angular.module("myApp",[]);
+			app.controller("myCtrl",function($scope,$rootScope){
+				$scope.name=['eamil','hhh','ddd',{names:'dfsfs'}];
+				$rootScope.lastname="fdsafas";
+			});
+		</script>
+    </body>
+</html>

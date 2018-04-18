@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+    <head>
+		<meta charset="UTF-8">
+        <title>HTML5</title>
+        <script src="../angular.min.js"></script>
+    </head>
+    <body>
+		<div id="" class="" ng-app="myApp" ng-controller="myCtrl">
+			<input type="text" ng-model="fname" /><br/>
+			<input type="text" ng-model="lname" /><br/>
+			{{fullname()}}
+		</div>
+		<script type="text/javascript">
+			var app=angular.module('myApp',[]);
+			app.controller('myCtrl',function($scope){
+				$scope.fname="温";
+				$scope.lname="建平";
+				$scope.fullname=function(){
+					return $scope.fname+$scope.lname;
+				}
+			});
+		</script>
+    </body>
+</html>
